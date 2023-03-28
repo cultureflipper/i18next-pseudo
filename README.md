@@ -1,4 +1,59 @@
-[![npm version](https://badge.fury.io/js/i18next-pseudo.svg)](https://badge.fury.io/js/i18next-pseudo)
+# i18next-pseudo-cjk
+i18next-pseudo-cjk is a npm package which is forked and customized the [i18next-pseudo](https://www.npmjs.com/package/i18next-pseudo) by [Culture Flipper](https://cultureflipper.com/).
+
+
+You can use original usage, also you can try this too.
+```javascript
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import Pseudo from "i18next-pseudo-cjk";
+import LanguageDetector from "i18next-browser-languagedetector";
+import ResourceEnUs from './assets/locale/en-US/translation.json';
+import ResourceKoKr from './assets/locale/ko-KR/translation.json';
+
+const resources = {
+    EnUs: {
+        translation: ResourceEnUs,
+    },
+    KoKr: {
+        translation: ResourceKoKr,
+    }
+};
+
+i18n
+  .use(
+    new Pseudo({
+      languageToPseudo: "qps"
+    })
+  )
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .use(new Pseudo({
+    enabled: true,
+    languageToPseudo: 'qps',
+    letterMultiplier: 2,
+    wrapped: true
+  }))
+  .init({
+    postProcess: ["pseudo"],
+    resources: {
+      en: resources.EnUs,
+      ko: resources.KoKr,
+      qps: resources.EnUs,
+    },
+    fallbackLng: "en",
+    debug: true,
+    interpolation: {
+      escapeValue: false, // not needed for react as it escapes by default
+    },
+  });
+
+export default i18n;
+```
+
+
+
+# Original README starts
 
 [npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
 [npm]: https://www.npmjs.com/package/i18next-pseudo
