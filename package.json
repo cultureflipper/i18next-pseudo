@@ -1,5 +1,5 @@
 {
-  "name": "i18next-pseudo",
+  "name": "i18next-pseudo-cjk",
   "version": "2.2.1",
   "description": "Pseudolocalization plugin for i18next",
   "main": "lib/index.js",
