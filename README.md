@@ -1,5 +1,5 @@
 # i18next-pseudo-cjk
-i18next-pseudo-cjk is a npm package which is forked and customized the [i18next-pseudo](https://www.npmjs.com/package/i18next-pseudo) by [Culture Flipper](https://cultureflipper.com/).
+i18next-pseudo-cjk is a npm package which is forked and customized the [i18next-pseudo](https://www.npmjs.com/package/i18next-pseudo).
 
 
 You can use original usage, also you can try this too.
