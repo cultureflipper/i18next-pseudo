@@ -21,11 +21,6 @@ const resources = {
 };
 
 i18n
-  .use(
-    new Pseudo({
-      languageToPseudo: "qps"
-    })
-  )
   .use(LanguageDetector)
   .use(initReactI18next)
   .use(new Pseudo({
